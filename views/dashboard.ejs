@@ -19,6 +19,14 @@
         <li><a href="/">Logout</a></li>
       </ul>
     </nav>
-    <h1>Welcome</h1>
+    <div class="container">
+      <h1>Welcome</h1>
+      <ul>
+        <% for (var i=0;i<title.length;i++) {%>
+          <li><%= title[i] %></li>
+        <% } %>
+      </ul>
+
+    </div>
   </body>
 </html>
