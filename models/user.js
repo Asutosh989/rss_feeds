@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-var Schema = mongoose.schema();
+var Schema = new mongoose.schema();
 var userData = new Schema({
   rssfeed : String,
   time : Date

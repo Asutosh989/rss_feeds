@@ -17,6 +17,7 @@
     "mongoose": "^4.11.7",
     "morgan": "~1.0.0",
     "nodemon": "^1.11.0",
-    "static-favicon": "~1.0.0"
+    "static-favicon": "~1.0.0",
+    "striptags": "^3.0.1"
   }
 }
