@@ -2,7 +2,7 @@
 
 Here it collects the feeds of blogging website and shows it to the user. 
 
-For now it is collecting feeds from a [blogging site](http://theindiansociety.org) and shows it on the dashboard.
+For now it is collecting feeds from a blogging site [The Indian Society](http://theindiansociety.org) and shows it on the dashboard.
 
 ## Setting
 
