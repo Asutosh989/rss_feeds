@@ -13,7 +13,7 @@ router.post('/login', function(req, res) {
   var username = req.body.username;
   var password = req.body.password;
 
-  if (username == "Admin" && password == "1234") {
+  if (username == "Admin" && password == "admin") {
     res.redirect('/users/login/feeds');
   } else {
     req.flash('error_msg', {
