@@ -1,6 +1,7 @@
 # How to Create a Pull Request
 
 
+  - If a issue is claimed, move on to the next issue. Do not duplicate yur issue.
   - Click on the fork on the top to fork this repo.
   - Go to your repo where you fork the project.
   - Hit the clone button on your repo of the forked repo and copy the given link.
