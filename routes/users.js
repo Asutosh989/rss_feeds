@@ -2,7 +2,6 @@ var express = require('express');
 var feedparser = require('ortoo-feedparser');
 const Feed = require('../models/feed');
 const tags = require('striptags');
-const url = 'http://theindiansociety.org/feed';
 
 var router = express.Router();
 /* GET users listing. */
@@ -32,10 +31,10 @@ router.post('/login', function(req, res) {
 //   });
 // }
 
-function getDirectFeeds(){
+function getDirectFeeds(feedurl){
   return new Promise((resolve, reject) => {
     var feedDto= [];
-    feedparser.parseUrl(url)
+    feedparser.parseUrl(feedurl)
       .on('error', (error) => {
         reject(error);
       })
@@ -56,11 +55,128 @@ function getDirectFeeds(){
 
 router.get('/login/feeds', function(req, res, next) {
   try {
-    getDirectFeeds().then(allFeeds=>{
-      res.render('dashboard', {
-        docs: allFeeds
+    var siteName=req.query.siteoption || 'The Indian Society';
+    switch(siteName){
+    case 'BBC News':{
+
+      const defaultUrl='http://feeds.bbci.co.uk/news/world/rss.xml';
+      getDirectFeeds(defaultUrl).then(allFeeds=>{
+        res.render('dashboard', {
+          docs: allFeeds,
+          siteName: siteName
+        });
       });
-    });
+      break;
+    }
+    case 'CNN News':{
+
+      const defaultUrl='http://rss.cnn.com/rss/edition_world.rss';
+      getDirectFeeds(defaultUrl).then(allFeeds=>{
+        res.render('dashboard', {
+          docs: allFeeds,
+          siteName: siteName
+        });
+      });
+      break;
+    }
+    case 'Yahoo':{
+
+      const defaultUrl='https://www.yahoo.com/news/rss/';
+      getDirectFeeds(defaultUrl).then(allFeeds=>{
+        res.render('dashboard', {
+          docs: allFeeds,
+          siteName: siteName
+        });
+      });
+      break;
+    }
+    case 'NASA':{
+
+      const defaultUrl='https://www.nasa.gov/rss/dyn/image_of_the_day.rss';
+      getDirectFeeds(defaultUrl).then(allFeeds=>{
+        res.render('dashboard', {
+          docs: allFeeds,
+          siteName: siteName
+        });
+      });
+      break;
+    }
+    case 'PC World':{
+
+      const defaultUrl='https://www.pcworld.com/index.rss';
+      getDirectFeeds(defaultUrl).then(allFeeds=>{
+        res.render('dashboard', {
+          docs: allFeeds,
+          siteName: siteName
+        });
+      });
+      break;
+    }
+    case 'DNA India':{
+
+      const defaultUrl='http://www.dnaindia.com/syndication/rss,catID-2.xml';
+      getDirectFeeds(defaultUrl).then(allFeeds=>{
+        res.render('dashboard', {
+          docs: allFeeds,
+          siteName: siteName
+        });
+      });
+      break;
+    }
+    case 'Times of India':{
+
+      const defaultUrl='http://newsrack.in/crawled.feeds/toi.rss.xml';
+      getDirectFeeds(defaultUrl).then(allFeeds=>{
+        res.render('dashboard', {
+          docs: allFeeds,
+          siteName: siteName
+        });
+      });
+      break;
+    }
+    case 'The Financial Times':{
+
+      const defaultUrl='https://www.ft.com/world/asia-pacific/india?format=rss';
+      getDirectFeeds(defaultUrl).then(allFeeds=>{
+        res.render('dashboard', {
+          docs: allFeeds,
+          siteName: siteName
+        });
+      });
+      break;
+    }
+    case 'India Today':{
+
+      const defaultUrl='http://indiatoday.intoday.in/rss/article.jsp?sid=61';
+      getDirectFeeds(defaultUrl).then(allFeeds=>{
+        res.render('dashboard', {
+          docs: allFeeds,
+          siteName: siteName
+        });
+      });
+      break;
+    }
+    case 'Business-Standard':{
+
+      const defaultUrl='http://www.business-standard.com/rss/companies-101.rss';
+      getDirectFeeds(defaultUrl).then(allFeeds=>{
+        res.render('dashboard', {
+          docs: allFeeds,
+          siteName: siteName
+        });
+      });
+      break;
+    }
+    default:{
+      const defaultUrl='http://theindiansociety.org/feed';
+      getDirectFeeds(defaultUrl).then(allFeeds=>{
+        res.render('dashboard', {
+          docs: allFeeds,
+          siteName: siteName
+        });
+      });
+    }
+    }
   } catch (err) {
     next(err);
   }
