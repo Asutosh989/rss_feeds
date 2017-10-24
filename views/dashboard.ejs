@@ -21,7 +21,45 @@
     </nav>
     <div class="container">
       <h1>Welcome</h1>
-      <h2>The Indian Society</h2>
+      <form action="feeds" method="get">
+        <div class="radio">
+          <label><input type="radio" name="siteoption" value="The Indian Society">The Indian Society</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="siteoption" value="BBC News">BBC News</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="siteoption" value="CNN News">CNN News</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="siteoption" value="Yahoo">Yahoo News</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="siteoption" value="NASA">NASA</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="siteoption" value="PC World">PC World</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="siteoption" value="DNA India">DNA India</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="siteoption" value="Times of India">Times of India</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="siteoption" value="The Financial Times">The Financial Times</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="siteoption" value="India Today">India Today</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="siteoption" value="Business-Standard">Business-Standard</label>
+        </div>
+        <div class="radio">
+          <button type="submit" class="btn btn-info">Go</button>
+        </div>
+      </form>
+      <h2><%= siteName %></h2>
       <ul>
         <% for (var i=0;i<docs.length;i++) {%>
           <li><%= docs[i].title %></li>
