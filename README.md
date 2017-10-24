@@ -2,7 +2,19 @@
 
 Here it collects the feeds of blogging website and shows it to the user. 
 
-For now it is collecting feeds from a blogging site [The Indian Society](http://theindiansociety.org) and shows it on the dashboard.
+For now we support feed from following popular sites:
+[The Indian Society](http://theindiansociety.org)
+[BBC News](http://www.bbc.com/news)
+[CNN News](http://edition.cnn.com/world)
+[Yahoo News](https://www.yahoo.com/news/)
+[NASA](https://www.nasa.gov/multimedia/imagegallery/iotd.html)
+[PC World](https://www.pcworld.com/)
+[DNA India](http://www.dnaindia.com/)
+[Times of India](https://timesofindia.indiatimes.com/)
+[The Financial Times](https://www.ft.com/world/asia-pacific/india)
+[India Today](http://indiatoday.intoday.in/)
+[Business-Standard Companies](http://www.business-standard.com/companies)
+and shows it on the dashboard. choose from wide range.
 
 ## Setting
 
