@@ -62,6 +62,6 @@ and shows it on the dashboard. choose from wide range.
         - **username**: *Admin*
         - **password**: *admin*
 
-
+##### If you are new and want to contribute check [this](https://github.com/Asutosh989/Hacktoberfest-starter/blob/master/pull_request.md) out!!!
 
 
