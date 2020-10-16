@@ -83,4 +83,29 @@ router.get('/feeds', (req, res, next) => {
     });
   }
 });
+
+router.get('/feedsByUrl', (req, res, next) => {
+  if (!req.query.siteoption) {
+    res.status(400).send('Bad request!')
+  }
+  const siteName = req.query.siteoption;
+  console.log(siteName);
+
+  const siteBeToSearched = utils.feedDetails.filter((v) => v.name === siteName);
+  console.log(siteBeToSearched)
+
+  if (!siteBeToSearched.length) {
+    res.status(404).send('Couldn\'t get requested data!')
+  }
+
+  if (siteBeToSearched.length) {
+    getDirectFeeds(siteBeToSearched[0].defaultURL).then(allFeeds => {
+      res.status(200).send(allFeeds.items)
+    }).catch((error) => {
+      res.status(400).send('Bad request!')
+    });
+  }
+});
+
+
 module.exports = router;
