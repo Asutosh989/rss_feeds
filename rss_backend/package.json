@@ -12,7 +12,7 @@
     "cors": "^2.8.5",
     "debug": "^4.3.0",
     "ejs": "~2.5.5",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-session": "^1.17.1",
     "feedparser": "^2.2.10",
     "mongodb": "^3.6.2",
